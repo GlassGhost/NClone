@@ -31,7 +31,7 @@ def uiToWidget(uiFile):
 if __name__ == '__main__':
 	os.chdir(os.path.dirname(os.path.realpath(__file__)))
 	owd = os.getcwd()
-	print("Opening " + owd + "/NClone.ui" + "\n")
+	#print("Opening " + owd + "/NClone.ui" + "\n")
 	app = QtGui.QApplication(sys.argv)
 	MainWindow = uiToWidget(owd + "/NClone.ui")
 	MainWindow.show()
