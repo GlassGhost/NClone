@@ -13,7 +13,16 @@
   <property name="windowTitle">
    <string>NClone</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -23,7 +32,7 @@
      <height>24</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuNew_Tab">
+   <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>File</string>
     </property>
@@ -126,14 +135,13 @@
     <addaction name="separator"/>
     <addaction name="actionAbout"/>
    </widget>
-   <addaction name="menuNew_Tab"/>
+   <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuView"/>
    <addaction name="menuGo"/>
    <addaction name="menuBookmarks"/>
    <addaction name="menuHelp"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNew_Tab">
    <property name="text">
     <string>New Tab</string>

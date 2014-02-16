@@ -26,26 +26,15 @@ respective Authors or Copyright Holder(s).
 
 END OF TERMS AND CONDITIONS'''#_________________________________________________
 import re, os, sys, subprocess, threading, optparse, math, random, readline
-
-#import
-#git clone https://gerrit.googlesource.com/git-repo
-#git://git.debian.org/git/collab-maint/checkinstall.git
-#https://github.com/cython/cython
-#https://github.com/pydata/pandas
-#https://github.com/sympy/sympy
-#https://github.com/scipy/scipy
-#https://github.com/matplotlib/matplotlib
-
 from PySide import QtCore, QtGui, QtUiTools
-import uiFileToWidget as uiFileToWidget
 
-if __name__ == '__main__':
-	os.chdir(os.path.dirname(os.path.realpath(__file__)))
-	owd = os.getcwd()
-	app = QtGui.QApplication(sys.argv)
-	#print("Opening " + owd + "/NClone.ui" + "\n")
-	MainWindow = uiFileToWidget(owd + "/NClone.ui")
-	MainWindow.show()
-	sys.exit(app.exec_())
+def uiFileToWidget(uiFileName):
+	"""Accessess the ".ui" file given to it, and returns a corresponding widget"""
+	loader = QtUiTools.QUiLoader()
+	uiFile = QtCore.QFile(os.path.normpath(uiFileName))
+	uiFile.open(QtCore.QFile.ReadOnly)
+	Widget = loader.load(uiFile)
+	uiFile.close()
+	return Widget
 #_______________________________________________________________________________
 
